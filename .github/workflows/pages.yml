@@ -33,7 +33,7 @@ jobs:
 
       - name: Install application dependencies
         working-directory: _velclawhost
-        run: bun install --frozen-lockfile
+        run: bun install
 
       - name: Build application for domain root
         working-directory: _velclawhost
