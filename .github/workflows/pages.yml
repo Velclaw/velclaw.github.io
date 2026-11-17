@@ -50,6 +50,7 @@ jobs:
           cp -R site/. _site/ecosystem/
           cp -R content/. _site/content-source/
           cp README.md LICENSE SECURITY.md _site/ 2>/dev/null || true
+          if [ -f CNAME ]; then cp CNAME _site/CNAME; fi
           cp -R _velclawhost/dist/. _site/
 
       - name: Upload Pages artifact
