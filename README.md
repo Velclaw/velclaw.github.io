@@ -9,6 +9,8 @@ source_url:
 api_name: liquid
 ---
 
+{% raw %}
+
 <div align="center">
 
 <img src="./assets/velclaw-hero.svg" alt="Velclaw — AI-native development ecosystem" width="900">
@@ -386,3 +388,5 @@ My custom string.
 [Liquid is an open source project on GitHub.](https://github.com/Shopify/liquid)
 
 ***
+
+{% endraw %}
