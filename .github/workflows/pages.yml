@@ -3,6 +3,8 @@ name: Deploy VelclawHost at root GitHub Pages URL
 on:
   push:
     branches: ["main"]
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -33,7 +35,7 @@ jobs:
 
       - name: Install application dependencies
         working-directory: _velclawhost
-        run: bun install --frozen-lockfile
+        run: bun install
 
       - name: Build application for domain root
         working-directory: _velclawhost
@@ -59,6 +61,7 @@ jobs:
           path: _site
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
